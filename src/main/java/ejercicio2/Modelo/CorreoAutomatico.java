@@ -6,20 +6,20 @@ import java.util.List;
 
 public class CorreoAutomatico {
 
-    EmpleadoService service;
+    EmpleadoService servicioEmpleado;
     ClasesCorreo correo;
 
-    public CorreoAutomatico (EmpleadoService baseEmpleados, ClasesCorreo correo){
-        this.service = baseEmpleados;
+    public CorreoAutomatico (EmpleadoService servicioEmpleado, ClasesCorreo correo){
+        this.servicioEmpleado = servicioEmpleado;
         this.correo = correo;
     }
 
     public void felicitarCumpleaños(){
-        List<Empleado> empleados = service.cargarEmpleadosDelArchivo();
+        List<Empleado> empleados = servicioEmpleado.cargarEmpleadosDelArchivo();
         for (Empleado e : empleados){
 
             if (e.esCumpleaños()){
-                correo.correoCumpleaños(e.getLastName(),e.getFirstName(),e.getEmail());
+                correo.correoCumpleaños(e.getApellido(),e.getNombre(),e.getEmail());
             }
         }
     }

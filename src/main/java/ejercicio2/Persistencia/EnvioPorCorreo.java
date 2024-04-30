@@ -35,17 +35,11 @@ public class EnvioPorCorreo implements ClasesCorreo {
                 });
 
         try {
-
             Message message = new MimeMessage(session);
-
             message.setFrom(new InternetAddress(USERNAME));
-
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(nombre));
-
             message.setSubject("Feliz Cumpleaños " + nombre + "<3");
-
             message.setText("Sr/Sra: " + apellido + "\n Desde la empresa te desamos un muy feliz cumpleaños. Como regalo, te damos por aprobado Orientacion a Objetos II. ;)");
-
             Transport.send(message);
 
         } catch (MessagingException e) {

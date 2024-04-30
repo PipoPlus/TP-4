@@ -2,7 +2,7 @@ package ejercicio1.Main;
 
 import java.sql.DriverManager;
 
-public class SetUpDataBase {
+public class ConexionBaseDeDatos {
 
 
     private final String username;
@@ -11,7 +11,7 @@ public class SetUpDataBase {
 
 
 
-    public SetUpDataBase(String conn, String username, String pwd) {
+    public ConexionBaseDeDatos(String conn, String username, String pwd) {
         this.conn = conn;
         this.username = username;
         this.pwd = pwd;

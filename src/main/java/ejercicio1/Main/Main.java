@@ -4,7 +4,6 @@ import ejercicio1.Modelo.Concurso;
 import ejercicio1.Persistencia.InscripcionSQL;
 import ejercicio1.UI.AgregarParticipante;
 
-import java.sql.SQLException;
 import java.awt.EventQueue;
 
 
@@ -19,15 +18,15 @@ public class Main {
 
     public static void main(String[] args) {
         inicializarDatabase();
-        launchApplication();
+        lanzarAplicacion();
     }
 
-    private static void launchApplication() {
+    private static void lanzarAplicacion() {
        EventQueue.invokeLater(new Runnable() {
            public void run() {
                try {
                    InscripcionSQL registroInscripciones =
-                           new InscripcionSQL(URL,USER,PASSWORD);
+                           new InscripcionSQL(URL, USER, PASSWORD);
                    Concurso concurso = new Concurso(registroInscripciones);
                    new AgregarParticipante(concurso);
                } catch (Exception e) {
@@ -39,9 +38,7 @@ public class Main {
     ;}
 
     private static void inicializarDatabase() {
-        var jdbc = new SetUpDataBase(URL,
-                USER,
-                PASSWORD);
+        var jdbc = new ConexionBaseDeDatos(URL, USER, PASSWORD);
         jdbc.inicializar();
     }
 

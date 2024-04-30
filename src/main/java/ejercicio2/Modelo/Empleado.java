@@ -5,32 +5,32 @@ import java.time.LocalDate;
 
 public class Empleado {
 
-    private String lastName;
-    private String firstName;
-    private LocalDate birthDate;
+    private String apellido;
+    private String nombre;
+    private LocalDate nacimiento;
     private String email;
 
 
 
-    public Empleado(String lastName, String firstName, LocalDate birthDate, String email) {
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.birthDate = birthDate;
+    public Empleado(String apellido, String nombre, LocalDate nacimiento, String email) {
+        this.apellido = apellido;
+        this.nombre = nombre;
+        this.nacimiento = nacimiento;
         this.email = email;
     }
 
 
     public boolean esCumpleaños(){
         LocalDate fechaActual = LocalDate.now();
-        return birthDate.getMonthValue() == fechaActual.getMonthValue() && birthDate.getDayOfMonth() == fechaActual.getDayOfMonth();
+        return nacimiento.getMonthValue() == fechaActual.getMonthValue() && nacimiento.getDayOfMonth() == fechaActual.getDayOfMonth();
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getApellido() {
+        return apellido;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getNombre() {
+        return nombre;
     }
 
     public String getEmail() {

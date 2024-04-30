@@ -47,9 +47,9 @@ public class ConcursoBaseDeDatos implements ConcursoRegistro {
     }
 
     @Override
-    public Optional<Integer> encontrarIdConcursoPorNombre(String name) {
+    public Optional<Integer> encontrarIdConcursoPorNombre(String nombre) {
         for (Concurso concurso : concursos) {
-            if (concurso.getNombreConcurso().equals(name)) {
+            if (concurso.getNombreConcurso().equals(nombre)) {
                 return Optional.of(concurso.getIdConcurso());
             }
         }

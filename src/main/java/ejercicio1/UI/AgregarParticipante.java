@@ -52,6 +52,7 @@ public class AgregarParticipante extends JFrame {
         pack();
         setVisible(true);
     }
+
     private void onBotonCargar() {
         if (nombre.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Debe cargar un nombre");

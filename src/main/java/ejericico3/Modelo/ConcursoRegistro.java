@@ -7,7 +7,7 @@ public interface ConcursoRegistro {
 
     List<Concurso> todosLosConcursos();
 
-    Optional<Integer> encontrarIdConcursoPorNombre(String name);
+    Optional<Integer> encontrarIdConcursoPorNombre(String nombre);
 
     void guardarInscripcion(String apellido, String nombre, String telefono, String email, String concurso, int id);
 

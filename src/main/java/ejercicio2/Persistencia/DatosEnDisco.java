@@ -11,19 +11,19 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataBase implements EmpleadoService {
+public class DatosEnDisco implements EmpleadoService {
 
-    String filePath;
+    String ruta;
 
-    public DataBase(String ruta){
-        this.filePath = ruta;
+    public DatosEnDisco(String rutaArchivo){
+        this.ruta = rutaArchivo;
     }
 
     @Override
     public List<Empleado> cargarEmpleadosDelArchivo() {
         List<Empleado> employees = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(", ");
